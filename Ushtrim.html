@@ -1,0 +1,59 @@
+
+
+<html>
+
+<title> Ushtrim </title>
+<body style="    background: content-box;
+    background-color: darkblue;
+    font-size: larger;
+    font-style: italic;
+    color: white;
+">
+<h1> Ushtrimi 1 </h1>
+<p>
+Një klasë e quajtur Account, e cila modelon një llogari bankare të një klienti, është projektuar siç tregohet në diagramin e klasës së mëposhtme. Metodat kredit(shuma) dhe debiti(shuma) shtojnë ose zbresin shumën e dhënë në gjendje. Metoda transferTo(një llogari tjetër, shumë) transferon shumën e dhënë nga kjo llogari në një llogari tjetër të dhënë. Shkruani klasën Account.
+</p>
+<img src="Screenshot from 2022-09-08 16-07-39.png"/>
+
+<p>Pasi te keni krujuar klasen do krijoni klasen LlogariaMain per ta testuar dhe ketu do te gjeni testoin</p>
+<xmp>
+public class TestMain {
+   public static void main(String[] args) {
+      // Test constructor and toString()
+      Account a1 = new Account("A101", "Tan Ah Teck", 88);
+      System.out.println(a1);  // toString();
+      Account a2 = new Account("A102", "Kumar"); // default balance
+      System.out.println(a2);
+
+      // Test Getters
+      System.out.println("ID: " + a1.getID());
+      System.out.println("Name: " + a1.getName());
+      System.out.println("Balance: " + a1.getBalance());
+
+      // Test credit() and debit()
+      a1.credit(100);
+      System.out.println(a1);
+      a1.debit(50);
+      System.out.println(a1);
+      a1.debit(500);  // debit() error
+      System.out.println(a1);
+
+      // Test transfer()
+      a1.transferTo(a2, 100);  // toString()
+      System.out.println(a1);
+      System.out.println(a2);
+   }
+}
+</xmp>
+
+
+<h3> Pasi ta keni testuar do krijoni nje array me Llogari qe do te kete 5 llogari. Do krijoni metodat perkatese per keto kerkesa:</h3>
+ <ul> 
+    <li>cila llogari ka me shume lek</li>
+    <li>cila llogari ka me pak lek</li>
+    <li>Te printoni id e llogarise qe ka te pakten 500 leke ne llogarik</li>
+    <li>Te renditni llogarite me rend rrites</li>
+ </ul>
+
+<html>
+
